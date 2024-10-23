@@ -136,13 +136,13 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className="px-6 w-[15%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-hidden mt-20">
+    <div className="px-6 w-[15%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
       {/* Home */}
       <div className="space-y-3 items-center">
         {/* array  maping */}
         {sidebarItems.map((items) => {
           return (
-            <div className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div key={items.id} className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
               <div className="text-xl cursor-pointer">{items.icons}</div>
               <span className="cursor-pointer">{items.name}</span>
             </div>
@@ -160,7 +160,7 @@ const Sidebar = () => {
         {/* array  maping */}
         {sidebarItems2.map((items) => {
           return (
-            <div className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div key={items.id} className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
               <div className="text-xl cursor-pointer">{items.icons}</div>
               <span className="cursor-pointer">{items.name}</span>
             </div>
@@ -177,7 +177,7 @@ const Sidebar = () => {
         {/* array  maping */}
         {sidebarItems3.map((items) => {
           return (
-            <div className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div key={items.id} className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
               <div className="text-xl cursor-pointer">{items.icons}</div>
               <span className="cursor-pointer">{items.name}</span>
             </div>
@@ -194,7 +194,7 @@ const Sidebar = () => {
         {/* array  maping */}
         {sidebarItems4.map((items) => {
           return (
-            <div className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div key={items.id} className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
               <div className="text-xl cursor-pointer text-red-500">{items.icons}</div>
               <span className="cursor-pointer">{items.name}</span>
             </div>
@@ -207,7 +207,7 @@ const Sidebar = () => {
       <div className=" mt-4 space-y-3 items-center">
         {sidebarItems5.map((items) => {
           return (
-            <div className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+            <div key={items.id} className=" flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
               <div className="text-xl cursor-pointer">{items.icons}</div>
               <span className="cursor-pointer">{items.name}</span>
             </div>
