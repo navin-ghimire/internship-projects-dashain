@@ -4,16 +4,16 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import PlayingVideo from './components/PlayingVideo'
 import Search from './components/Search'
+import { useAuth } from './context/AuthProvider'
+import Loading from './loader/Loading'
 // import Sidebar from './components/Sidebar'
-// import { useAuth } from './context/AuthProvider'
-
 
 const App = () => {
-  // const {loading, data} = useAuth();
-  // console.log(loading);
-  // console.log(data);
+   const {loading} = useAuth();
+ 
   return (
     <div>
+      {loading && <Loading />}
       <Navbar />
       <Routes>
         <Route path='/' exact element ={<Home />} />
