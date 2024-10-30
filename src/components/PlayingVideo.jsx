@@ -12,25 +12,33 @@ const PlayingVideo = () => {
   const [relatedVideo, setRelatedVideo] = useState();
   const { id } = useParams();
 
+
   useEffect(() => {
+    const fetchVideoDetails = async () => {
+      try {
+        const res = await fetchData(`video/details/?id=${id}`);
+        console.log(res);
+        setVideo(res);
+      } catch (error) {
+        console.error("Failed to fetch video details:", error);
+      }
+    };
+  
+    const fetchRelatedVideo = async () => {
+      try {
+        const res = await fetchData(`video/related-contents/?id=${id}`);
+        console.log(res);
+        setRelatedVideo(res);
+      } catch (error) {
+        console.error("Failed to fetch related videos:", error);
+      }
+    };
+
     fetchVideoDetails();
     fetchRelatedVideo();
-  }, [id]);
+}, [id]);
 
-  const fetchVideoDetails = () => {
-    fetchData(`video/details/?id=${id}`).then((res) => {
-      console.log(res);
-      setVideo(res);
-    });
-  };
-
-  const fetchRelatedVideo = () => {
-    fetchData(`video/related-contents/?id=${id}`).then((res) => {
-      console.log(res);
-      setRelatedVideo(res);
-    });
-  };
-
+ 
   return (
     <div className="flex justify-center flex-row h-[calc(100%-56%)] mt-14">
       <div className="w-full max-w-[1280px] flex flex-col lg:flex-row">
@@ -94,7 +102,7 @@ const PlayingVideo = () => {
             {video?.stats?.comments} <p>Comments</p>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col px-4 py-6 h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden lg:w-[350px] xl:w-[400px]">
           {relatedVideo?.contents?.map((item, index) => {
             if (item?.type !== "video") return false;
             return <SuggestedVideo key={index} video={item?.video} />;
@@ -107,4 +115,5 @@ const PlayingVideo = () => {
 
 export default PlayingVideo;
 
-// className="flex flex-col px-60 py-6 h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden lg:w-[350px] xl:w-[400px]"
+
+// className="flex flex-col px-60 py-6 h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden "

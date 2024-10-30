@@ -6,7 +6,6 @@ import PlayingVideo from './components/PlayingVideo'
 import Search from './components/Search'
 import { useAuth } from './context/AuthProvider'
 import Loading from './loader/Loading'
-// import Sidebar from './components/Sidebar'
 
 const App = () => {
    const {loading} = useAuth();
