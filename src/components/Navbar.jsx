@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { ImYoutube2 } from "react-icons/im";
 import { CiSearch } from "react-icons/ci";
@@ -7,8 +7,13 @@ import { RiVideoAddLine } from "react-icons/ri";
 import { AiOutlineBell } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  // const [setIsSidebar, isSidebar, mobileShow, setMobileShow] = useUtils();
+
+  
+
 
   const navigate = useNavigate();
 
@@ -22,10 +27,18 @@ const Navbar = () => {
     }
   };
 
+  // const handleSidebar = () => {
+  //   if(window.innerWidth <= 1280){
+  //     setIsSidebar(!isSidebar);
+  //     setMobileShow(!mobileShow);
+  //   }
+  //   setIsSidebar(!isSidebar);
+  // };
+
   return (
     <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2">
       <div className=" flex items-center space-x-4">
-        <AiOutlineMenu className="text-2xl cursor-pointer" />
+        <AiOutlineMenu className="text-2xl cursor-pointer"  />
         <ImYoutube2 className="w-[80px] h-[40px] cursor-pointer" />
       </div>
       <div className="flex w-[35%] items-center">
