@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  // const [setIsSidebar, isSidebar, mobileShow, setMobileShow] = useUtils();
+  
+  
 
   
 
@@ -27,13 +28,6 @@ const Navbar = () => {
     }
   };
 
-  // const handleSidebar = () => {
-  //   if(window.innerWidth <= 1280){
-  //     setIsSidebar(!isSidebar);
-  //     setMobileShow(!mobileShow);
-  //   }
-  //   setIsSidebar(!isSidebar);
-  // };
 
   return (
     <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2">
